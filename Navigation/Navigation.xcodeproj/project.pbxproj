@@ -7,35 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4B4D489427ABE39800EEE5B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4D489327ABE39800EEE5B8 /* AppDelegate.swift */; };
-		4B4D489627ABE39800EEE5B8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4D489527ABE39800EEE5B8 /* SceneDelegate.swift */; };
-		4B4D489D27ABE39900EEE5B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B4D489C27ABE39900EEE5B8 /* Assets.xcassets */; };
-		4B4D48A027ABE39900EEE5B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B4D489E27ABE39900EEE5B8 /* LaunchScreen.storyboard */; };
-		4B4D48B227AED37100EEE5B8 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4D48B127AED37100EEE5B8 /* ProfileView.swift */; };
-		4B4D48B427B00A7B00EEE5B8 /* ProfileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B4D48B327B00A7B00EEE5B8 /* ProfileView.xib */; };
-		4B4D48B627B0318200EEE5B8 /* ariel.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B4D48B527B0318200EEE5B8 /* ariel.png */; };
-		4B4D48BA27B95ECA00EEE5B8 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B4D48B927B95ECA00EEE5B8 /* Profile.storyboard */; };
-		4B4D48BB27BAA02F00EEE5B8 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4D48AF27AED20500EEE5B8 /* ProfileViewController.swift */; };
-		4B4D48FD27BFC71A00EEE5B8 /* 8E1D3B1B-16BE-4D49-8994-A46E6C8E6964_1_201_a.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 4B4D48FC27BFC71A00EEE5B8 /* 8E1D3B1B-16BE-4D49-8994-A46E6C8E6964_1_201_a.jpeg */; };
+		4B4D48E927BEF08700EEE5B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4D48E827BEF08700EEE5B8 /* AppDelegate.swift */; };
+		4B4D48EB27BEF08700EEE5B8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4D48EA27BEF08700EEE5B8 /* SceneDelegate.swift */; };
+		4B4D48ED27BEF08700EEE5B8 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4D48EC27BEF08700EEE5B8 /* FeedViewController.swift */; };
+		4B4D48F227BEF08800EEE5B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B4D48F127BEF08800EEE5B8 /* Assets.xcassets */; };
+		4B4D48F527BEF08800EEE5B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B4D48F327BEF08800EEE5B8 /* LaunchScreen.storyboard */; };
+		4B4D48FF27C1604600EEE5B8 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4D48FE27C1604600EEE5B8 /* TabBarController.swift */; };
+		4B4D490127C1766400EEE5B8 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4D490027C1766400EEE5B8 /* ProfileViewController.swift */; };
+		4B4D490527C37FFC00EEE5B8 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4D490427C37FFC00EEE5B8 /* PostViewController.swift */; };
+		4B4D490727C3C84C00EEE5B8 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4D490627C3C84C00EEE5B8 /* InfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4B4D489027ABE39800EEE5B8 /* Netology_IB_Instruments.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Netology_IB_Instruments.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		4B4D489327ABE39800EEE5B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4B4D489527ABE39800EEE5B8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4B4D489C27ABE39900EEE5B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		4B4D489F27ABE39900EEE5B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		4B4D48A127ABE39900EEE5B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4B4D48AF27AED20500EEE5B8 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		4B4D48B127AED37100EEE5B8 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
-		4B4D48B327B00A7B00EEE5B8 /* ProfileView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileView.xib; sourceTree = "<group>"; };
-		4B4D48B527B0318200EEE5B8 /* ariel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ariel.png; path = ../ariel.png; sourceTree = "<group>"; };
-		4B4D48B927B95ECA00EEE5B8 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
-		4B4D48FC27BFC71A00EEE5B8 /* 8E1D3B1B-16BE-4D49-8994-A46E6C8E6964_1_201_a.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "8E1D3B1B-16BE-4D49-8994-A46E6C8E6964_1_201_a.jpeg"; path = "../../../../Pictures/Photos Library.photoslibrary/resources/renders/8/8E1D3B1B-16BE-4D49-8994-A46E6C8E6964_1_201_a.jpeg"; sourceTree = "<group>"; };
+		4B4D48E527BEF08700EEE5B8 /* Navigation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Navigation.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B4D48E827BEF08700EEE5B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4B4D48EA27BEF08700EEE5B8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		4B4D48EC27BEF08700EEE5B8 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		4B4D48F127BEF08800EEE5B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4B4D48F427BEF08800EEE5B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4B4D48F627BEF08800EEE5B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4B4D48FE27C1604600EEE5B8 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		4B4D490027C1766400EEE5B8 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		4B4D490427C37FFC00EEE5B8 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		4B4D490627C3C84C00EEE5B8 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		4B4D488D27ABE39800EEE5B8 /* Frameworks */ = {
+		4B4D48E227BEF08700EEE5B8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -45,76 +43,75 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4B4D488727ABE39800EEE5B8 = {
+		4B4D48DC27BEF08700EEE5B8 = {
 			isa = PBXGroup;
 			children = (
-				4B4D489227ABE39800EEE5B8 /* Netology_IB_Instruments */,
-				4B4D489127ABE39800EEE5B8 /* Products */,
+				4B4D48E727BEF08700EEE5B8 /* Navigation */,
+				4B4D48E627BEF08700EEE5B8 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		4B4D489127ABE39800EEE5B8 /* Products */ = {
+		4B4D48E627BEF08700EEE5B8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4B4D489027ABE39800EEE5B8 /* Netology_IB_Instruments.app */,
+				4B4D48E527BEF08700EEE5B8 /* Navigation.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		4B4D489227ABE39800EEE5B8 /* Netology_IB_Instruments */ = {
+		4B4D48E727BEF08700EEE5B8 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
-				4B4D489327ABE39800EEE5B8 /* AppDelegate.swift */,
-				4B4D489527ABE39800EEE5B8 /* SceneDelegate.swift */,
-				4B4D489C27ABE39900EEE5B8 /* Assets.xcassets */,
-				4B4D489E27ABE39900EEE5B8 /* LaunchScreen.storyboard */,
-				4B4D48A127ABE39900EEE5B8 /* Info.plist */,
-				4B4D48B127AED37100EEE5B8 /* ProfileView.swift */,
-				4B4D48B327B00A7B00EEE5B8 /* ProfileView.xib */,
-				4B4D48B527B0318200EEE5B8 /* ariel.png */,
-				4B4D48FC27BFC71A00EEE5B8 /* 8E1D3B1B-16BE-4D49-8994-A46E6C8E6964_1_201_a.jpeg */,
-				4B4D48AF27AED20500EEE5B8 /* ProfileViewController.swift */,
-				4B4D48B927B95ECA00EEE5B8 /* Profile.storyboard */,
+				4B4D48E827BEF08700EEE5B8 /* AppDelegate.swift */,
+				4B4D48EA27BEF08700EEE5B8 /* SceneDelegate.swift */,
+				4B4D48FE27C1604600EEE5B8 /* TabBarController.swift */,
+				4B4D48EC27BEF08700EEE5B8 /* FeedViewController.swift */,
+				4B4D490027C1766400EEE5B8 /* ProfileViewController.swift */,
+				4B4D490627C3C84C00EEE5B8 /* InfoViewController.swift */,
+				4B4D490427C37FFC00EEE5B8 /* PostViewController.swift */,
+				4B4D48F127BEF08800EEE5B8 /* Assets.xcassets */,
+				4B4D48F327BEF08800EEE5B8 /* LaunchScreen.storyboard */,
+				4B4D48F627BEF08800EEE5B8 /* Info.plist */,
 			);
-			path = Netology_IB_Instruments;
+			path = Navigation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4B4D488F27ABE39800EEE5B8 /* Netology_IB_Instruments */ = {
+		4B4D48E427BEF08700EEE5B8 /* Navigation */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4B4D48A427ABE39900EEE5B8 /* Build configuration list for PBXNativeTarget "Netology_IB_Instruments" */;
+			buildConfigurationList = 4B4D48F927BEF08800EEE5B8 /* Build configuration list for PBXNativeTarget "Navigation" */;
 			buildPhases = (
-				4B4D488C27ABE39800EEE5B8 /* Sources */,
-				4B4D488D27ABE39800EEE5B8 /* Frameworks */,
-				4B4D488E27ABE39800EEE5B8 /* Resources */,
+				4B4D48E127BEF08700EEE5B8 /* Sources */,
+				4B4D48E227BEF08700EEE5B8 /* Frameworks */,
+				4B4D48E327BEF08700EEE5B8 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = Netology_IB_Instruments;
-			productName = Netology_IB_Instruments;
-			productReference = 4B4D489027ABE39800EEE5B8 /* Netology_IB_Instruments.app */;
+			name = Navigation;
+			productName = Navigation;
+			productReference = 4B4D48E527BEF08700EEE5B8 /* Navigation.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		4B4D488827ABE39800EEE5B8 /* Project object */ = {
+		4B4D48DD27BEF08700EEE5B8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1320;
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
-					4B4D488F27ABE39800EEE5B8 = {
+					4B4D48E427BEF08700EEE5B8 = {
 						CreatedOnToolsVersion = 13.2.1;
 					};
 				};
 			};
-			buildConfigurationList = 4B4D488B27ABE39800EEE5B8 /* Build configuration list for PBXProject "Netology_IB_Instruments" */;
+			buildConfigurationList = 4B4D48E027BEF08700EEE5B8 /* Build configuration list for PBXProject "Navigation" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -122,51 +119,50 @@
 				en,
 				Base,
 			);
-			mainGroup = 4B4D488727ABE39800EEE5B8;
-			productRefGroup = 4B4D489127ABE39800EEE5B8 /* Products */;
+			mainGroup = 4B4D48DC27BEF08700EEE5B8;
+			productRefGroup = 4B4D48E627BEF08700EEE5B8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4B4D488F27ABE39800EEE5B8 /* Netology_IB_Instruments */,
+				4B4D48E427BEF08700EEE5B8 /* Navigation */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		4B4D488E27ABE39800EEE5B8 /* Resources */ = {
+		4B4D48E327BEF08700EEE5B8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B4D48BA27B95ECA00EEE5B8 /* Profile.storyboard in Resources */,
-				4B4D48A027ABE39900EEE5B8 /* LaunchScreen.storyboard in Resources */,
-				4B4D48B627B0318200EEE5B8 /* ariel.png in Resources */,
-				4B4D48B427B00A7B00EEE5B8 /* ProfileView.xib in Resources */,
-				4B4D489D27ABE39900EEE5B8 /* Assets.xcassets in Resources */,
-				4B4D48FD27BFC71A00EEE5B8 /* 8E1D3B1B-16BE-4D49-8994-A46E6C8E6964_1_201_a.jpeg in Resources */,
+				4B4D48F527BEF08800EEE5B8 /* LaunchScreen.storyboard in Resources */,
+				4B4D48F227BEF08800EEE5B8 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		4B4D488C27ABE39800EEE5B8 /* Sources */ = {
+		4B4D48E127BEF08700EEE5B8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B4D489427ABE39800EEE5B8 /* AppDelegate.swift in Sources */,
-				4B4D48BB27BAA02F00EEE5B8 /* ProfileViewController.swift in Sources */,
-				4B4D48B227AED37100EEE5B8 /* ProfileView.swift in Sources */,
-				4B4D489627ABE39800EEE5B8 /* SceneDelegate.swift in Sources */,
+				4B4D48ED27BEF08700EEE5B8 /* FeedViewController.swift in Sources */,
+				4B4D48FF27C1604600EEE5B8 /* TabBarController.swift in Sources */,
+				4B4D490527C37FFC00EEE5B8 /* PostViewController.swift in Sources */,
+				4B4D490727C3C84C00EEE5B8 /* InfoViewController.swift in Sources */,
+				4B4D490127C1766400EEE5B8 /* ProfileViewController.swift in Sources */,
+				4B4D48E927BEF08700EEE5B8 /* AppDelegate.swift in Sources */,
+				4B4D48EB27BEF08700EEE5B8 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		4B4D489E27ABE39900EEE5B8 /* LaunchScreen.storyboard */ = {
+		4B4D48F327BEF08800EEE5B8 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				4B4D489F27ABE39900EEE5B8 /* Base */,
+				4B4D48F427BEF08800EEE5B8 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -174,7 +170,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		4B4D48A227ABE39900EEE5B8 /* Debug */ = {
+		4B4D48F727BEF08800EEE5B8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -235,7 +231,7 @@
 			};
 			name = Debug;
 		};
-		4B4D48A327ABE39900EEE5B8 /* Release */ = {
+		4B4D48F827BEF08800EEE5B8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -290,7 +286,7 @@
 			};
 			name = Release;
 		};
-		4B4D48A527ABE39900EEE5B8 /* Debug */ = {
+		4B4D48FA27BEF08800EEE5B8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -298,10 +294,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Netology_IB_Instruments/Info.plist;
+				INFOPLIST_FILE = Navigation/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Profile;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -309,15 +304,15 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "-.Netology-IB-Instruments";
+				PRODUCT_BUNDLE_IDENTIFIER = "-.Navigation";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		4B4D48A627ABE39900EEE5B8 /* Release */ = {
+		4B4D48FB27BEF08800EEE5B8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -325,10 +320,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Netology_IB_Instruments/Info.plist;
+				INFOPLIST_FILE = Navigation/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Profile;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -336,36 +330,36 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "-.Netology-IB-Instruments";
+				PRODUCT_BUNDLE_IDENTIFIER = "-.Navigation";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4B4D488B27ABE39800EEE5B8 /* Build configuration list for PBXProject "Netology_IB_Instruments" */ = {
+		4B4D48E027BEF08700EEE5B8 /* Build configuration list for PBXProject "Navigation" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4B4D48A227ABE39900EEE5B8 /* Debug */,
-				4B4D48A327ABE39900EEE5B8 /* Release */,
+				4B4D48F727BEF08800EEE5B8 /* Debug */,
+				4B4D48F827BEF08800EEE5B8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4B4D48A427ABE39900EEE5B8 /* Build configuration list for PBXNativeTarget "Netology_IB_Instruments" */ = {
+		4B4D48F927BEF08800EEE5B8 /* Build configuration list for PBXNativeTarget "Navigation" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4B4D48A527ABE39900EEE5B8 /* Debug */,
-				4B4D48A627ABE39900EEE5B8 /* Release */,
+				4B4D48FA27BEF08800EEE5B8 /* Debug */,
+				4B4D48FB27BEF08800EEE5B8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 4B4D488827ABE39800EEE5B8 /* Project object */;
+	rootObject = 4B4D48DD27BEF08700EEE5B8 /* Project object */;
 }
