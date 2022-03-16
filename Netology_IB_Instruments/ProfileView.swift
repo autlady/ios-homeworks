@@ -18,7 +18,7 @@ class ProfileView: UIView {
     @IBOutlet weak var userCity: UILabel!
     
     @IBOutlet weak var userSignature: UITextView!
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.setupView()

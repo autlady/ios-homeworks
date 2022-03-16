@@ -16,7 +16,6 @@
 		4B4D48B627B0318200EEE5B8 /* ariel.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B4D48B527B0318200EEE5B8 /* ariel.png */; };
 		4B4D48BA27B95ECA00EEE5B8 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B4D48B927B95ECA00EEE5B8 /* Profile.storyboard */; };
 		4B4D48BB27BAA02F00EEE5B8 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4D48AF27AED20500EEE5B8 /* ProfileViewController.swift */; };
-		4B4D48FD27BFC71A00EEE5B8 /* 8E1D3B1B-16BE-4D49-8994-A46E6C8E6964_1_201_a.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 4B4D48FC27BFC71A00EEE5B8 /* 8E1D3B1B-16BE-4D49-8994-A46E6C8E6964_1_201_a.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +30,6 @@
 		4B4D48B327B00A7B00EEE5B8 /* ProfileView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileView.xib; sourceTree = "<group>"; };
 		4B4D48B527B0318200EEE5B8 /* ariel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ariel.png; path = ../ariel.png; sourceTree = "<group>"; };
 		4B4D48B927B95ECA00EEE5B8 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
-		4B4D48FC27BFC71A00EEE5B8 /* 8E1D3B1B-16BE-4D49-8994-A46E6C8E6964_1_201_a.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "8E1D3B1B-16BE-4D49-8994-A46E6C8E6964_1_201_a.jpeg"; path = "../../../../Pictures/Photos Library.photoslibrary/resources/renders/8/8E1D3B1B-16BE-4D49-8994-A46E6C8E6964_1_201_a.jpeg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,7 +70,6 @@
 				4B4D48B127AED37100EEE5B8 /* ProfileView.swift */,
 				4B4D48B327B00A7B00EEE5B8 /* ProfileView.xib */,
 				4B4D48B527B0318200EEE5B8 /* ariel.png */,
-				4B4D48FC27BFC71A00EEE5B8 /* 8E1D3B1B-16BE-4D49-8994-A46E6C8E6964_1_201_a.jpeg */,
 				4B4D48AF27AED20500EEE5B8 /* ProfileViewController.swift */,
 				4B4D48B927B95ECA00EEE5B8 /* Profile.storyboard */,
 			);
@@ -142,7 +139,6 @@
 				4B4D48B627B0318200EEE5B8 /* ariel.png in Resources */,
 				4B4D48B427B00A7B00EEE5B8 /* ProfileView.xib in Resources */,
 				4B4D489D27ABE39900EEE5B8 /* Assets.xcassets in Resources */,
-				4B4D48FD27BFC71A00EEE5B8 /* 8E1D3B1B-16BE-4D49-8994-A46E6C8E6964_1_201_a.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

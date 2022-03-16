@@ -32,7 +32,7 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Имя" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="HnB-yd-tHl">
                     <rect key="frame" x="159" y="2" width="210" height="41"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" systemColor="systemPurpleColor"/>
                     <nil key="highlightedColor"/>
@@ -62,7 +62,7 @@
             <viewLayoutGuide key="safeArea" id="hjX-qm-ikN"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="19365.942028985508" y="-362.36413043478262"/>
+            <point key="canvasLocation" x="18943" y="-347"/>
         </view>
     </objects>
     <resources>
