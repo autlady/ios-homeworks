@@ -17,7 +17,6 @@
 		4B4D490527C37FFC00EEE5B8 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4D490427C37FFC00EEE5B8 /* PostViewController.swift */; };
 		4B4D490727C3C84C00EEE5B8 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4D490627C3C84C00EEE5B8 /* InfoViewController.swift */; };
 		4B4D490F27CCD05A00EEE5B8 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4D490E27CCD05A00EEE5B8 /* ProfileHeaderView.swift */; };
-		4B4D491327CD232B00EEE5B8 /* lazy_cat.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B4D491227CD232B00EEE5B8 /* lazy_cat.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,7 +32,6 @@
 		4B4D490427C37FFC00EEE5B8 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		4B4D490627C3C84C00EEE5B8 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		4B4D490E27CCD05A00EEE5B8 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
-		4B4D491227CD232B00EEE5B8 /* lazy_cat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lazy_cat.png; path = ../../../../../lazy_cat.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +72,6 @@
 				4B4D490627C3C84C00EEE5B8 /* InfoViewController.swift */,
 				4B4D490427C37FFC00EEE5B8 /* PostViewController.swift */,
 				4B4D48F127BEF08800EEE5B8 /* Assets.xcassets */,
-				4B4D491227CD232B00EEE5B8 /* lazy_cat.png */,
 				4B4D48F327BEF08800EEE5B8 /* LaunchScreen.storyboard */,
 				4B4D48F627BEF08800EEE5B8 /* Info.plist */,
 			);
@@ -148,7 +145,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B4D491327CD232B00EEE5B8 /* lazy_cat.png in Resources */,
 				4B4D48F527BEF08800EEE5B8 /* LaunchScreen.storyboard in Resources */,
 				4B4D48F227BEF08800EEE5B8 /* Assets.xcassets in Resources */,
 			);
