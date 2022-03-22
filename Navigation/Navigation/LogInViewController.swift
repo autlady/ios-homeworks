@@ -15,14 +15,6 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         return scrollView
     }()
 
-    private lazy var contentView: UIView = {
-        let contentView = UIView()
-        contentView.translatesAutoresizingMaskIntoConstraints = false
-
-        return contentView
-    }()
-
-
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
@@ -31,7 +23,24 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         self.tapGesture()
         self.infoTextField.delegate = self
         self.passwordTextField.delegate = self
+
+        NotificationCenter.default.addObserver(self, selector: #selector(LogInViewController.kbWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(LogInViewController.kbWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+
         }
+
+
+    @objc func kbWillShow(notification: NSNotification) {
+
+        if let kbFrameSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            scrollView.contentOffset = CGPoint(x: 0, y: kbFrameSize.height * 0.1)
+        scrollView.scrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: kbFrameSize.height, right: 0)
+    }
+    }
+
+    @objc func kbWillHide(notification: NSNotification) {
+        scrollView.contentOffset = CGPoint.zero
+    }
 
     private lazy var logoImageView: UIImageView = {
 
@@ -133,9 +142,8 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     private func setUpView() {
 
         self.view.addSubview(scrollView)
-        self.scrollView.addSubview(contentView)
-        self.contentView.addSubview(stackView)
-        self.contentView.addSubview(logoImageView)
+        self.scrollView.addSubview(stackView)
+        self.scrollView.addSubview(logoImageView)
         self.stackView.addArrangedSubview(textFieldStackView)
         self.stackView.addArrangedSubview(logInButton)
         self.textFieldStackView.addArrangedSubview(infoTextField)
@@ -145,31 +153,22 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         let scrollViewRightConstraint = self.scrollView.rightAnchor.constraint(equalTo: self.view.rightAnchor)
         let scrollViewBottomConstraint = self.scrollView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
         let scrollViewLeftConstraint = self.scrollView.leftAnchor.constraint(equalTo: self.view.leftAnchor)
-        let contentViewCenterConstraint = self.contentView.centerXAnchor.constraint(equalTo: self.scrollView.centerXAnchor)
-        let contentViewWidth = self.contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor, constant: -32)
-        let contentViewTopConstraint = self.contentView.topAnchor.constraint(equalTo: self.scrollView.topAnchor)
-        let contentViewBottomAnchor = self.contentView.bottomAnchor.constraint(equalTo: self.scrollView.bottomAnchor)
 
-        let topLogoConstraint = self.logoImageView.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 120)
-
+        let bottomLogoConstraint = self.logoImageView.bottomAnchor.constraint(equalTo: self.stackView.topAnchor, constant: -70)
         let heightLogoConstraint = self.logoImageView.heightAnchor.constraint(equalToConstant: 100)
-
         let widthLogoConstraint = self.logoImageView.widthAnchor.constraint(equalToConstant: 100)
+        let centerXLogoConstraint = self.logoImageView.centerXAnchor.constraint(equalTo: self.scrollView.centerXAnchor)
 
-        let centerLogoConstraint = self.logoImageView.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor)
-
-        let stackViewTopConstraint = self.stackView.topAnchor.constraint(equalTo: self.logoImageView.bottomAnchor, constant: 120)
-        let stackViewLeadingConstraint = self.stackView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor)
-        let stackViewTrailingConstraint = self.stackView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor)
-        let stackViewBottomAnchor = self.stackView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -300)
+        let stackViewCenterXConstraint = self.stackView.centerXAnchor.constraint(equalTo: self.scrollView.centerXAnchor)
+        let stackViewCenterYConstraint = self.stackView.centerYAnchor.constraint(equalTo: self.scrollView.centerYAnchor)
+        let stackViewLeadingConstraint = self.stackView.leadingAnchor.constraint(equalTo: self.scrollView.leadingAnchor, constant: 16)
+        let stackViewTrailingConstraint = self.stackView.trailingAnchor.constraint(equalTo: self.scrollView.trailingAnchor, constant: -16)
 
         let infoTextFieldHeightAnchor = self.infoTextField.heightAnchor.constraint(equalToConstant: 50)
         let passwordTextFieldHeightAnchor = self.passwordTextField.heightAnchor.constraint(equalToConstant: 50)
         let heightButtonConstraint = self.logInButton.heightAnchor.constraint(equalToConstant: 50)
 
-
-
-        NSLayoutConstraint.activate([ scrollViewTopConstraint, scrollViewRightConstraint, scrollViewBottomConstraint, scrollViewLeftConstraint, contentViewCenterConstraint, contentViewWidth, contentViewTopConstraint, contentViewBottomAnchor, topLogoConstraint, heightLogoConstraint, widthLogoConstraint,  centerLogoConstraint, stackViewTopConstraint, stackViewLeadingConstraint, stackViewTrailingConstraint, stackViewBottomAnchor, infoTextFieldHeightAnchor, passwordTextFieldHeightAnchor, heightButtonConstraint])
+        NSLayoutConstraint.activate([ scrollViewTopConstraint, scrollViewRightConstraint, scrollViewBottomConstraint, scrollViewLeftConstraint, heightLogoConstraint, widthLogoConstraint,  centerXLogoConstraint, bottomLogoConstraint, stackViewCenterXConstraint, stackViewCenterYConstraint, stackViewLeadingConstraint, stackViewTrailingConstraint, infoTextFieldHeightAnchor, passwordTextFieldHeightAnchor, heightButtonConstraint])
 }
     private func tapGesture() {
         let tapGesture = UITapGestureRecognizer(target: self.view, action: #selector(view.endEditing))
