@@ -30,7 +30,7 @@ final class PostTableViewCell: UITableViewCell {
         label.font = UIFont.systemFont(ofSize: 20, weight: .bold)
         label.textColor = .black
         label.setContentCompressionResistancePriority(UILayoutPriority(1000), for: .vertical)
-        label.setContentHuggingPriority(UILayoutPriority(1), for: .vertical) // свойства нужны чтобы autolayout правильно располагал элементы
+        label.setContentHuggingPriority(UILayoutPriority(1), for: .vertical)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -40,7 +40,6 @@ final class PostTableViewCell: UITableViewCell {
         imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.backgroundColor = .black
-//        imageView.contentMode = .scaleAspectFill
 
         return imageView
     }()
@@ -67,7 +66,7 @@ final class PostTableViewCell: UITableViewCell {
         return stackView
     }()
 
-    private lazy var likesLabel: UILabel = { // количество лайков
+    private lazy var likesLabel: UILabel = {
         let label = UILabel()
         label.text  = "Likes:"
         label.backgroundColor = .clear
@@ -81,7 +80,7 @@ final class PostTableViewCell: UITableViewCell {
         return label
     }()
 
-    private lazy var viewsLabel: UILabel = { // количество просмотров
+    private lazy var viewsLabel: UILabel = {
         let label = UILabel()
         label.text  = "Views: "
         label.backgroundColor = .clear
@@ -105,7 +104,7 @@ final class PostTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    override func prepareForReuse() { //обнуление информации в ячейках
+    override func prepareForReuse() {
         super.prepareForReuse()
         self.authorLabel.text = nil
         self.postImageView.image = nil
@@ -192,9 +191,10 @@ final class PostTableViewCell: UITableViewCell {
     }
 }
 
-extension PostTableViewCell: Setupable { // загружаем модель
+extension PostTableViewCell: Setupable {
 
-    func setup(with viewModel: ViewModelProtocol) { // наполнение ячейки
+    func setup(with viewModel: ViewModelProtocol) {
+        
         guard let viewModel = viewModel as? ViewModel else { return }
 
         self.authorLabel.text = viewModel.author

@@ -26,14 +26,13 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
 
         NotificationCenter.default.addObserver(self, selector: #selector(LogInViewController.kbWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(LogInViewController.kbWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-
         }
 
 
     @objc func kbWillShow(notification: NSNotification) {
 
         if let kbFrameSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            scrollView.contentOffset = CGPoint(x: 0, y: kbFrameSize.height * 0.1)
+        scrollView.contentOffset = CGPoint(x: 0, y: kbFrameSize.height * 0.1)
         scrollView.scrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: kbFrameSize.height, right: 0)
     }
     }
@@ -52,7 +51,7 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
 
     }()
 
-    private lazy var stackView: UIStackView = {  // Создаем стек инициализации
+    private lazy var stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
@@ -196,3 +195,5 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
 
     }
 }
+
+
