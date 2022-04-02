@@ -26,6 +26,7 @@
 		4BC96B5F27EB873A004B44EA /* PhotosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC96B5E27EB873A004B44EA /* PhotosTableViewCell.swift */; };
 		4BC96B6127EB881A004B44EA /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC96B6027EB881A004B44EA /* PhotoCell.swift */; };
 		4BC96B6327EB88E5004B44EA /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC96B6227EB88E5004B44EA /* PhotosViewController.swift */; };
+		4BC96B6927F1FA1D004B44EA /* GesturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC96B6827F1FA1D004B44EA /* GesturesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		4BC96B5E27EB873A004B44EA /* PhotosTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosTableViewCell.swift; sourceTree = "<group>"; };
 		4BC96B6027EB881A004B44EA /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		4BC96B6227EB88E5004B44EA /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
+		4BC96B6827F1FA1D004B44EA /* GesturesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GesturesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 				4BC96B4E27E671B7004B44EA /* LogInViewController.swift */,
 				4BC96B5027E6813C004B44EA /* news.json */,
 				4BC96B6227EB88E5004B44EA /* PhotosViewController.swift */,
+				4BC96B6827F1FA1D004B44EA /* GesturesViewController.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -224,6 +227,7 @@
 				4B4D48FF27C1604600EEE5B8 /* TabBarController.swift in Sources */,
 				4BC96B4F27E671B7004B44EA /* LogInViewController.swift in Sources */,
 				4BC96B5D27EB7ED5004B44EA /* PhotosCollectionViewCell.swift in Sources */,
+				4BC96B6927F1FA1D004B44EA /* GesturesViewController.swift in Sources */,
 				4B4D490527C37FFC00EEE5B8 /* PostViewController.swift in Sources */,
 				4B4D490727C3C84C00EEE5B8 /* InfoViewController.swift in Sources */,
 				4BC96B5B27E77DF8004B44EA /* News.swift in Sources */,
