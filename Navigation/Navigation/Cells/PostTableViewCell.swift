@@ -7,7 +7,17 @@
 
 import UIKit
 
+protocol PostTableViewCellProtocol: AnyObject {
+    func tapPosts(cell: PostTableViewCell)
+    func tapLikes(cell: PostTableViewCell)
+}
+
 final class PostTableViewCell: UITableViewCell {
+
+    weak var delegate: PostTableViewCellProtocol?
+
+    private var tapLikesGestureRecognizer = UITapGestureRecognizer()
+    private var tapPostsGestureRecognizer = UITapGestureRecognizer()
 
     struct ViewModel: ViewModelProtocol {
         var author, description, image: String
@@ -98,6 +108,7 @@ final class PostTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.setupView()
+        self.setupGesture()
     }
 
     required init?(coder: NSCoder) {
@@ -200,10 +211,35 @@ extension PostTableViewCell: Setupable {
         self.authorLabel.text = viewModel.author
         self.postImageView.image = UIImage(named: viewModel.image)
         self.descriptionLabel.text = viewModel.description
-        self.likesLabel.text? += String(viewModel.likes)
-        self.viewsLabel.text? += String(viewModel.views)
+        self.likesLabel.text = "Likes: " + String(viewModel.likes)
+        self.viewsLabel.text = "Views: " + String(viewModel.views)
 
     }
 }
+
+extension PostTableViewCell {
+
+    private func setupGesture() {
+        self.tapLikesGestureRecognizer.addTarget(self, action: #selector(self.likesHandleTapGesture(_:)))
+        self.likesLabel.addGestureRecognizer(self.tapLikesGestureRecognizer)
+        self.likesLabel.isUserInteractionEnabled = true
+
+        self.tapPostsGestureRecognizer.addTarget(self, action: #selector(self.postsHandleTapGesture(_:)))
+        self.postImageView.addGestureRecognizer(self.tapPostsGestureRecognizer)
+        self.postImageView.isUserInteractionEnabled = true
+    }
+
+
+    @objc func likesHandleTapGesture(_ gestureRecognizer: UITapGestureRecognizer) {
+        guard self.tapLikesGestureRecognizer === gestureRecognizer else { return }
+        delegate?.tapLikes(cell: self)
+    }
+
+    @objc func postsHandleTapGesture(_ gestureRecognizer: UITapGestureRecognizer) {
+        guard self.tapPostsGestureRecognizer === gestureRecognizer else { return }
+        delegate?.tapPosts(cell: self)
+    }
+}
+
 
 

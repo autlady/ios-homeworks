@@ -27,6 +27,7 @@
 		4BC96B6127EB881A004B44EA /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC96B6027EB881A004B44EA /* PhotoCell.swift */; };
 		4BC96B6327EB88E5004B44EA /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC96B6227EB88E5004B44EA /* PhotosViewController.swift */; };
 		4BC96B6927F1FA1D004B44EA /* GesturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC96B6827F1FA1D004B44EA /* GesturesViewController.swift */; };
+		4BC96BD127FB48AB004B44EA /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC96BD027FB48AB004B44EA /* PostView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		4BC96B6027EB881A004B44EA /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		4BC96B6227EB88E5004B44EA /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
 		4BC96B6827F1FA1D004B44EA /* GesturesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GesturesViewController.swift; sourceTree = "<group>"; };
+		4BC96BD027FB48AB004B44EA /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 		4B4D48E727BEF08700EEE5B8 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
+				4BC96BCF27FB488E004B44EA /* Views */,
 				4BC96B5827E77DB9004B44EA /* Core */,
 				4BC96B5527E7692C004B44EA /* Cells */,
 				4BC96B5227E68262004B44EA /* Protocols */,
@@ -147,6 +150,14 @@
 				4BC96B5A27E77DF8004B44EA /* News.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		4BC96BCF27FB488E004B44EA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4BC96BD027FB48AB004B44EA /* PostView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,6 +247,7 @@
 				4B4D48E927BEF08700EEE5B8 /* AppDelegate.swift in Sources */,
 				4BC96B5427E76906004B44EA /* Setupable.swift in Sources */,
 				4B4D48EB27BEF08700EEE5B8 /* SceneDelegate.swift in Sources */,
+				4BC96BD127FB48AB004B44EA /* PostView.swift in Sources */,
 				4B4D490F27CCD05A00EEE5B8 /* ProfileHeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

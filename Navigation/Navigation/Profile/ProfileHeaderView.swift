@@ -175,6 +175,11 @@ class ProfileHeaderView: UIView, UITextFieldDelegate {
             textField.becomeFirstResponder()
 
         } else {
+            guard textField.text != "" else {
+                textField.backgroundColor = .red
+                textField.vibrate()
+                return
+            }
             statusText = textField.text!
             statusLabel.text = "\(statusText ?? "")"
             setStatusButton.setTitle("Show status", for: .normal)
@@ -187,6 +192,18 @@ class ProfileHeaderView: UIView, UITextFieldDelegate {
         self.delegate?.didTapStatusButton(textFieldIsVisible: self.textField.isHidden) { [weak self] in
             self?.textField.isHidden.toggle()
         }
+    }
+}
+
+extension UIView {
+    func vibrate() {
+    let animation = CABasicAnimation(keyPath: "position")
+            animation.duration = 0.05
+            animation.repeatCount = 5
+            animation.autoreverses = true
+    animation.fromValue = NSValue(cgPoint: CGPoint(x: self.center.x - 5.0, y: self.center.y))
+    animation.toValue = NSValue(cgPoint: CGPoint(x: self.center.x + 5.0, y: self.center.y))
+    layer.add(animation, forKey: "position")
     }
 }
 

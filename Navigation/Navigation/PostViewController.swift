@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 class PostViewController: UIViewController {
 
         override func viewDidLoad() {
@@ -24,4 +25,6 @@ class PostViewController: UIViewController {
     self.present(infoVC, animated: true)
 }
 }
+
+
 
