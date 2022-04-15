@@ -27,7 +27,6 @@ class FeedViewController: UIViewController {
         return button
     }()
 
-
     let secondButton: UIButton = {
         let button = UIButton(type: .system)
         button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)

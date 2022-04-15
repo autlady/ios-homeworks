@@ -17,7 +17,6 @@ struct News: Decodable {
             }
     }
 
-
     let posts: [Post]
 }
 

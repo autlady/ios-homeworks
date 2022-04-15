@@ -8,7 +8,6 @@
 import UIKit
 
 class LogInViewController: UIViewController, UITextFieldDelegate {
-
     private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
@@ -19,6 +18,7 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         self.view.backgroundColor = .white
         self.navigationController?.navigationBar.isHidden = true
+        self.tabBarController?.tabBar.isHidden = true
         self.setUpView()
         self.tapGesture()
         self.infoTextField.delegate = self
@@ -26,15 +26,13 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
 
         NotificationCenter.default.addObserver(self, selector: #selector(LogInViewController.kbWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(LogInViewController.kbWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-        }
-
+    }
 
     @objc func kbWillShow(notification: NSNotification) {
-
         if let kbFrameSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
         scrollView.contentOffset = CGPoint(x: 0, y: kbFrameSize.height * 0.25)
         scrollView.scrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: kbFrameSize.height, right: 0)
-    }
+        }
     }
 
     @objc func kbWillHide(notification: NSNotification) {
@@ -42,13 +40,10 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     }
 
     private lazy var logoImageView: UIImageView = {
-
         let imageView = UIImageView()
         imageView.image = UIImage(named: "logo")
         imageView.translatesAutoresizingMaskIntoConstraints = false
-
         return imageView
-
     }()
 
     private lazy var warningLabel: UILabel = {
@@ -88,8 +83,8 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         textField.layer.borderWidth = 0.5
         textField.layer.borderColor = UIColor.lightGray.cgColor
         textField.clearButtonMode = .whileEditing
-         textField.clearButtonMode = .unlessEditing
-         textField.clearButtonMode = .always
+        textField.clearButtonMode = .unlessEditing
+        textField.clearButtonMode = .always
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
@@ -109,8 +104,8 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         textField.layer.borderWidth = 0.5
         textField.layer.borderColor = UIColor.lightGray.cgColor
         textField.clearButtonMode = .whileEditing
-         textField.clearButtonMode = .unlessEditing
-         textField.clearButtonMode = .always
+        textField.clearButtonMode = .unlessEditing
+        textField.clearButtonMode = .always
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
@@ -131,7 +126,6 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     private var topButtonConstraint: NSLayoutConstraint?
 
     private func setUpView() {
-
         self.view.addSubview(scrollView)
         self.scrollView.addSubview(textFieldStackView)
         self.scrollView.addSubview(logoImageView)
@@ -166,31 +160,28 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
 
         NSLayoutConstraint.activate([ scrollViewTopConstraint, scrollViewRightConstraint, scrollViewBottomConstraint, scrollViewLeftConstraint, heightLogoConstraint, widthLogoConstraint,  centerXLogoConstraint, bottomLogoConstraint, stackViewCenterXConstraint, stackViewCenterYConstraint, stackViewLeadingConstraint, stackViewTrailingConstraint, infoTextFieldHeightAnchor, passwordTextFieldHeightAnchor, heightButtonConstraint, self.topButtonConstraint, buttonLeadingConstraint,  buttonTrailingConstraint].compactMap( {$0} ))
 }
+
     private func tapGesture() {
         let tapGesture = UITapGestureRecognizer(target: self.view, action: #selector(view.endEditing))
         self.view.addGestureRecognizer(tapGesture)
     }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-            self.view.endEditing(true)
-            return false
+        self.view.endEditing(true)
+        return false
         }
 
-    func validPassword(userPassword : String) -> Bool
-        {
-
-            let passwordReg =  (".{6,}")
-            let passwordTesting = NSPredicate(format: "SELF MATCHES %@", passwordReg)
-            return passwordTesting.evaluate(with: userPassword)
+    func validPassword(userPassword : String) -> Bool {
+        let passwordReg =  (".{6,}")
+        let passwordTesting = NSPredicate(format: "SELF MATCHES %@", passwordReg)
+        return passwordTesting.evaluate(with: userPassword)
         }
 
     func isValidEmail(userEmail: String) -> Bool {
         let emailRegEx = "(?:[a-z0-9!#$%\\&'*+/=?\\^_`{|}~-]+(?:\\.[a-z0-9!#$%\\&'*+/=?\\^_`{|}"+"~-]+)*|\"(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\"+"x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*\")@(?:(?:[a-z0-9](?:[a-"+"z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\\[(?:(?:25[0-5"+"]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-"+"9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21"+"-\\x5a\\x53-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)\\])"
-
         let emailTest = NSPredicate(format:"SELF MATCHES[c] %@", emailRegEx)
         return emailTest.evaluate(with: userEmail)
     }
-
 
     @objc private func didTapLogInButton() {
         if logInButton.isSelected {
@@ -203,7 +194,6 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
             logInButton.alpha = 1
         }
 
-
         let topLabelConstraint = self.warningLabel.topAnchor.constraint(equalTo: self.textFieldStackView.bottomAnchor, constant: -10)
         let leadingLabelConstraint = self.warningLabel.leadingAnchor.constraint(equalTo: self.textFieldStackView.leadingAnchor)
         let heightLabelConstraint = self.warningLabel.heightAnchor.constraint(equalToConstant: 40)
@@ -212,45 +202,37 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         self.topButtonConstraint = self.logInButton.topAnchor.constraint(equalTo: self.warningLabel.bottomAnchor, constant: 16)
 
         let email = isValidEmail(userEmail: infoTextField.text!)
-
-                if(email == false)
-                {
-                    let alert = UIAlertController(title: "Внимание!", message: "Некорректный email", preferredStyle: UIAlertController.Style.alert)
-                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-                    self.present(alert, animated: true, completion: nil)
-                }
+        if(email == false) {
+            let alert = UIAlertController(title: "Внимание!", message: "Некорректный email", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
 
         let password = validPassword(userPassword: passwordTextField.text!)
-
-                if(password == false)
-                {
-                    self.warningLabel.isHidden = false
-                    self.scrollView.addSubview(self.warningLabel)
-                    self.topButtonConstraint?.isActive = false
-                    NSLayoutConstraint.activate([topLabelConstraint, leadingLabelConstraint, trailingLabelConstraint, heightLabelConstraint, topButtonConstraint].compactMap( {$0} ))
-                } else {
-                    self.warningLabel.removeFromSuperview()
-                    NSLayoutConstraint.deactivate([ topLabelConstraint, leadingLabelConstraint, trailingLabelConstraint, heightLabelConstraint
-                                ].compactMap( {$0} ))
-                    self.warningLabel.isHidden = true
+        if(password == false) {
+            self.warningLabel.isHidden = false
+            self.scrollView.addSubview(self.warningLabel)
+            self.topButtonConstraint?.isActive = false
+            NSLayoutConstraint.activate([topLabelConstraint, leadingLabelConstraint, trailingLabelConstraint, heightLabelConstraint, topButtonConstraint].compactMap( {$0} ))
+        } else {
+            self.warningLabel.removeFromSuperview()
+            NSLayoutConstraint.deactivate([topLabelConstraint, leadingLabelConstraint, trailingLabelConstraint, heightLabelConstraint].compactMap( {$0} ))
+            self.warningLabel.isHidden = true
                 }
 
-           if self.infoTextField.text == "" {
-               self.infoTextField.backgroundColor = .red
+        if self.infoTextField.text == "" {
+            self.infoTextField.backgroundColor = .red
         } else if passwordTextField.text == "" {
             self.passwordTextField.backgroundColor = .red
         } else if self.infoTextField.text == "julia_grigoreva@mail.ru" && passwordTextField.text == "1234567" {
-
             let profileVC = ProfileViewController()
             self.navigationController?.pushViewController(profileVC, animated: true)
-        }
-        else {
+        } else {
             let alert = UIAlertController(title: "Внимание!", message: "Данные введены неверно", preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
                 }
-
-}
+    }
 }
 
 

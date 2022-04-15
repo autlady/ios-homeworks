@@ -10,7 +10,6 @@ import UIKit
 final class GesturesViewController: UIViewController {
 
     private lazy var imageView: UIImageView = {
-
         let imageView = UIImageView(image: UIImage(named: "lazy_cat"))
         imageView.layer.borderWidth = 3.0
         imageView.layer.masksToBounds = false
@@ -20,33 +19,26 @@ final class GesturesViewController: UIViewController {
         imageView.clipsToBounds = true
         imageView.isUserInteractionEnabled = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
-
         return imageView
-
     }()
 
     private lazy var mySecondView: UIView = {
-
         let view = UIView()
         view.isHidden = true
         view.alpha = 0
         view.backgroundColor = .systemBlue
         view.translatesAutoresizingMaskIntoConstraints = false
-
         return view
     }()
 
     private lazy var myButton: UIButton = {
-
         let button = UIButton()
         let image = UIImage(systemName: "multiply.square")
         button.setBackgroundImage(image, for: .normal)
         button.isHidden = true
         button.alpha = 0
         button.translatesAutoresizingMaskIntoConstraints = false
-
         return button
-
     }()
 
     private let tapGestureRecognizer = UITapGestureRecognizer()
@@ -58,7 +50,6 @@ final class GesturesViewController: UIViewController {
 
     private var isExpanded = false
 
-
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupView()
@@ -66,7 +57,6 @@ final class GesturesViewController: UIViewController {
     }
 
     private func setupView() {
-
         self.view.backgroundColor = .white
         self.view.addSubview(self.imageView)
         self.view.addSubview(self.mySecondView)
@@ -88,14 +78,12 @@ final class GesturesViewController: UIViewController {
         let widthButtonConstraint = self.myButton.widthAnchor.constraint(equalToConstant: 50)
 
         NSLayoutConstraint.activate([ self.topImageConstraint, self.leftImageConstraint,  self.heightImageConstraint, self.widthImageConstraint, centerXViewConstraint, centerYViewConstraint,  widthViewConstraint, heightViewConstraint, topButtonConstraint,  rightButtonConstraint, heightButtonConstraint, widthButtonConstraint].compactMap({ $0 }))
-
     }
 
     private func setupGesture() {
         self.tapGestureRecognizer.addTarget(self, action: #selector(self.handleTapGesture(_:)))
         self.imageView.addGestureRecognizer(self.tapGestureRecognizer)
         myButton.addTarget(self, action: #selector(self.didTapButton), for: .touchUpInside)
-
     }
 
     @objc private func handleTapGesture(_ gestureRecognizer: UITapGestureRecognizer) {
@@ -111,7 +99,6 @@ final class GesturesViewController: UIViewController {
         UIView.animate(withDuration: 0.5) {
             self.mySecondView.alpha = self.isExpanded ? 0.5 : 0
             self.view.layoutIfNeeded()
-
         } completion: { _ in
         }
 
@@ -134,16 +121,13 @@ final class GesturesViewController: UIViewController {
         UIView.animate(withDuration: 0.5) {
             self.mySecondView.alpha = self.isExpanded ? 0.5 : 0
             self.view.layoutIfNeeded()
-
         } completion: { _ in
         }
 
         UIView.animate(withDuration: 0.3, delay: 0.5) {
             self.myButton.alpha = self.isExpanded ? 1 : 0
             self.view.layoutIfNeeded()
-
         } completion: { _ in
         }
-
     }
 }

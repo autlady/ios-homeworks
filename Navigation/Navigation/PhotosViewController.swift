@@ -8,53 +8,47 @@
 import UIKit
 
 class PhotosViewController: UIViewController {
-
     private enum Constants {
         static let itemCount: CGFloat = 3
     }
 
-var images = [UIImage]()
+    var images = [UIImage]()
 
     private lazy var layout: UICollectionViewFlowLayout = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         layout.minimumInteritemSpacing = 8
         layout.minimumLineSpacing = 8
-
         return layout
     }()
 
-private lazy var collectionView: UICollectionView = {
-    let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-    collectionView.dataSource = self
-    collectionView.delegate = self
-    collectionView.register(PhotosCollectionViewCell.self, forCellWithReuseIdentifier: "PhotoCell")
-    collectionView.translatesAutoresizingMaskIntoConstraints = false
-    return collectionView
-}()
+    private lazy var collectionView: UICollectionView = {
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        collectionView.register(PhotosCollectionViewCell.self, forCellWithReuseIdentifier: "PhotoCell")
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        return collectionView
+    }()
 
-
-override func viewDidLoad() {
-    super.viewDidLoad()
-
-    self.view.backgroundColor = .lightGray
-    self.view.addSubview(self.collectionView)
-
-    for i in 0...19 {
-        if let image = UIImage(named: "cat\(i)") {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.view.backgroundColor = .lightGray
+        self.view.addSubview(self.collectionView)
+        for i in 0...19 {
+            if let image = UIImage(named: "cat\(i)") {
             images.append(image)
+            }
         }
-    }
+        let topConstraint = self.collectionView.topAnchor.constraint(equalTo: self.view.topAnchor)
+        let leftConstraint = self.collectionView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor)
+        let rightConstraint = self.collectionView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor)
+        let bottomConstraint = self.collectionView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
 
-    let topConstraint = self.collectionView.topAnchor.constraint(equalTo: self.view.topAnchor)
-    let leftConstraint = self.collectionView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor)
-    let rightConstraint = self.collectionView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor)
-    let bottomConstraint = self.collectionView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
-
-    NSLayoutConstraint.activate([
+        NSLayoutConstraint.activate([
         topConstraint, leftConstraint, rightConstraint, bottomConstraint
-    ])
-}
+        ])
+    }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -73,15 +67,13 @@ override func viewDidLoad() {
 extension PhotosViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-
-    return images.count
+        return images.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath) as! PhotosCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath) as! PhotosCollectionViewCell
         let image = images[indexPath.item]
-        cell.photoImageView.image = image
-
+        cell.photoView.image = image
         return cell
     }
 
@@ -91,24 +83,39 @@ extension PhotosViewController: UICollectionViewDataSource, UICollectionViewDele
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-
         return UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath) as! PhotosCollectionViewCell
-            let image = images[indexPath.item]
-            cell.photoImageView.image = image
-        cell.frame = self.view.bounds
-        cell.contentMode = .scaleAspectFit
-        cell.isUserInteractionEnabled = true
-        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissImage))
-        cell.addGestureRecognizer(tap)
-        self.view.addSubview(cell)
+        let expandedCell = ExpandedPhotoCell()
+        expandedCell.delegate = self
+        self.view.addSubview(expandedCell)
+        expandedCell.imageExpandedCell.image = images[indexPath.item]
+        navigationController?.navigationBar.isHidden = true
+        NSLayoutConstraint.activate([
+            expandedCell.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            expandedCell.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            expandedCell.topAnchor.constraint(equalTo: view.topAnchor),
+            expandedCell.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+        UIView.animate(withDuration: 0.1, animations: {
+            self.view.layoutIfNeeded()
+        }) { _ in
+            UIView.animate(withDuration: 0.3) {
+                expandedCell.buttonCancel.alpha = 1
+                expandedCell.backgroundColor = .black.withAlphaComponent(0.8)
+            }
         }
-    @objc func dismissImage(_ sender: UITapGestureRecognizer) {
-        sender.view?.removeFromSuperview()
     }
 }
+
+extension PhotosViewController: ExpandedCellDelegate {
+    func pressedButton(view: ExpandedPhotoCell) {
+        view.removeFromSuperview()
+        navigationController?.navigationBar.isHidden = false
+    }
+}
+
+
 
 

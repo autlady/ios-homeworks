@@ -31,9 +31,7 @@ class PostView: UIView {
         label.preferredMaxLayoutWidth = self.frame.size.width
         label.textColor = .black
         label.translatesAutoresizingMaskIntoConstraints = false
-
         return label
-
     }()
 
     private lazy var postImageView: UIImageView = {
@@ -45,9 +43,7 @@ class PostView: UIView {
         return imageView
     }()
 
-
     private lazy var descriptionLabel: UILabel = {
-
         let label = UILabel()
         label.backgroundColor = .clear
         label.preferredMaxLayoutWidth = self.frame.size.width
@@ -57,7 +53,6 @@ class PostView: UIView {
         label.setContentCompressionResistancePriority(UILayoutPriority(999), for: .vertical)
         label.setContentHuggingPriority(UILayoutPriority(1), for: .vertical)
         label.translatesAutoresizingMaskIntoConstraints = false
-
         return label
     }()
 
@@ -67,7 +62,6 @@ class PostView: UIView {
         stackView.distribution = .fill
         stackView.setContentCompressionResistancePriority(UILayoutPriority(999), for: .vertical)
         stackView.translatesAutoresizingMaskIntoConstraints = false
-
         return stackView
     }()
 
@@ -81,7 +75,6 @@ class PostView: UIView {
         label.setContentHuggingPriority(UILayoutPriority(1), for: .horizontal)
         label.setContentCompressionResistancePriority(UILayoutPriority(500), for: .horizontal)
         label.translatesAutoresizingMaskIntoConstraints = false
-
         return label
     }()
 
@@ -94,8 +87,6 @@ class PostView: UIView {
         label.textColor = .black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.setContentCompressionResistancePriority(UILayoutPriority(500), for: .vertical)
-
-
         return label
     }()
 
@@ -105,7 +96,6 @@ class PostView: UIView {
         button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
         button.setBackgroundImage(image, for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
-
         return button
     }()
 
@@ -119,7 +109,6 @@ class PostView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
 
     private func setupView() {
         self.addSubview(self.backView)
@@ -149,7 +138,7 @@ class PostView: UIView {
         let widthPostImageView = self.postImageView.heightAnchor.constraint(equalTo: self.backView.widthAnchor, multiplier: 1.0)
 
         let topConstraintDescriptionLabel = self.descriptionLabel.topAnchor.constraint(equalTo: self.postImageView.bottomAnchor, constant: 16)
-        let leadingConstraintDescriptionLabell = self.descriptionLabel.leadingAnchor.constraint(equalTo: self.backView.leadingAnchor, constant: 16)
+        let leadingConstraintDescriptionLabel = self.descriptionLabel.leadingAnchor.constraint(equalTo: self.backView.leadingAnchor, constant: 16)
         let trailingConstraintDescriptionLabel = self.descriptionLabel.trailingAnchor.constraint(equalTo: self.backView.trailingAnchor, constant: -16)
 
         let topConstraintLikeStackView = self.stackView.topAnchor.constraint(equalTo: self.descriptionLabel.bottomAnchor)
@@ -162,18 +151,7 @@ class PostView: UIView {
         let heightButtonConstraint = self.returnButton.heightAnchor.constraint(equalToConstant: 28)
         let widthButtonConstraint = self.returnButton.widthAnchor.constraint(equalToConstant: 28)
 
-        NSLayoutConstraint.activate([ topConstraintAuthorLabel,
-                                      topConstraintPostImageView,
-                                      widthPostImageView,
-                                      leadingConstraintAuthorLabel, trailingConstraintAuthorLabel,
-                                      topConstraintDescriptionLabel, leadingConstraintDescriptionLabell,
-                                      trailingConstraintDescriptionLabel, topConstraintLikeStackView,
-                                      leadingConstraintLikeStackView, trailingConstraintLikeStackView,
-                                      bottomConstraintLikeStackView, leadingConstraintPostImageView,
-                                      trailingConstraintPostImageView,
-                                      topButtonConstraint, trailingButtonConstraint,
-                                      heightButtonConstraint, widthButtonConstraint, leadingConstraintBackView, trailingConstraintBackView, centerXConstraintBackView, centerYConstraintBackView
-
+        NSLayoutConstraint.activate([ topConstraintAuthorLabel, topConstraintPostImageView, widthPostImageView, leadingConstraintAuthorLabel, trailingConstraintAuthorLabel, topConstraintDescriptionLabel, leadingConstraintDescriptionLabel, trailingConstraintDescriptionLabel, topConstraintLikeStackView, leadingConstraintLikeStackView, trailingConstraintLikeStackView, bottomConstraintLikeStackView, leadingConstraintPostImageView, trailingConstraintPostImageView, topButtonConstraint, trailingButtonConstraint, heightButtonConstraint, widthButtonConstraint, leadingConstraintBackView, trailingConstraintBackView, centerXConstraintBackView, centerYConstraintBackView
         ])
     }
 
@@ -183,17 +161,13 @@ class PostView: UIView {
 }
 
 extension PostView: Setupable {
-
     func setup(with viewModel: ViewModelProtocol) {
         guard let viewModel = viewModel as? ViewModel else { return }
-
         self.authorLabel.text = viewModel.author
         self.postImageView.image = UIImage(named: viewModel.image)
         self.descriptionLabel.text = viewModel.description
         self.likesLabel.text = "Likes: " + String(viewModel.likes)
         self.viewsLabel.text = "Views: " + String(viewModel.views)
-
-
     }
 }
 
