@@ -8,20 +8,17 @@
 import UIKit
 
 class PhotosTableViewCell: UITableViewCell {
-
     var images = [UIImage]()
 
     private enum Constant {
         static let itemCount: CGFloat = 4
     }
 
-
     private lazy var backView: UIView = {
         let view = UIView()
         view.clipsToBounds = true
         view.backgroundColor = .white
         view.translatesAutoresizingMaskIntoConstraints = false
-
         return view
     }()
 
@@ -30,7 +27,6 @@ class PhotosTableViewCell: UITableViewCell {
         stackView.axis = .horizontal
         stackView.distribution = .fill
         stackView.translatesAutoresizingMaskIntoConstraints = false
-
         return stackView
     }()
 
@@ -41,28 +37,23 @@ class PhotosTableViewCell: UITableViewCell {
         label.textColor = .black
         label.font = UIFont.systemFont(ofSize: 24, weight: .bold)
         label.translatesAutoresizingMaskIntoConstraints = false
-
         return label
     }()
 
     private lazy var arrowImage: UIImageView = {
-
         let imageView = UIImageView()
         imageView.image = UIImage(systemName: "arrow.right")
         imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.backgroundColor = .white
-         imageView.clipsToBounds = true
-
+        imageView.clipsToBounds = true
         return imageView
-
     }()
 
     private lazy var layout: UICollectionViewFlowLayout = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         layout.minimumInteritemSpacing = 8
-
         return layout
     }()
 
@@ -72,7 +63,6 @@ class PhotosTableViewCell: UITableViewCell {
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.register(PhotoCell.self, forCellWithReuseIdentifier: "PhotoCell")
-
         return collectionView
     }()
 
@@ -97,7 +87,7 @@ class PhotosTableViewCell: UITableViewCell {
             if let image = UIImage(named: "cat\(i)") {
                 images.append(image)
             }
-    }
+        }
     }
 
     func activateConstraints() {
@@ -127,14 +117,12 @@ class PhotosTableViewCell: UITableViewCell {
         ])
     }
 
-    func itemSize(for width: CGFloat, with spacing: CGFloat) -> CGSize { // размеры ячейки
+    func itemSize(for width: CGFloat, with spacing: CGFloat) -> CGSize {
         let needWidth = width - 4 * spacing
         let itemWidth = floor(needWidth / Constant.itemCount)
-
         return CGSize(width: itemWidth, height: itemWidth)
     }
 }
-
 
 extension PhotosTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
@@ -142,18 +130,18 @@ extension PhotosTableViewCell: UICollectionViewDelegate, UICollectionViewDataSou
         return images.count
     }
 
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
+    {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath) as! PhotoCell
             let image = images[indexPath.item]
             cell.photoImageView.image = image
-
             return cell
-        }
+    }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
             let spacing = (collectionView.collectionViewLayout as? UICollectionViewFlowLayout)?.minimumInteritemSpacing
             return self.itemSize(for: collectionView.frame.width, with: spacing ?? 0)
-        }
+    }
 }
 
 

@@ -9,29 +9,24 @@ import UIKit
 
 class PhotosCollectionViewCell: UICollectionViewCell {
 
-     var photoImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFill
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.backgroundColor = .white
-         imageView.clipsToBounds = true
-
-         return imageView
+    lazy var photoView: UIImageView = {
+        let photo = UIImageView()
+        photo.translatesAutoresizingMaskIntoConstraints = false
+        photo.contentMode = .scaleAspectFill
+        photo.clipsToBounds = true
+        return photo
     }()
-
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.contentView.addSubview(self.photoImageView)
+        self.contentView.addSubview(self.photoView)
 
-        let topConstraint = self.photoImageView.topAnchor.constraint(equalTo: self.topAnchor)
-        let leadingConstraint = self.photoImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor)
-        let trailingConstraint = self.photoImageView.trailingAnchor.constraint(equalTo: self.trailingAnchor)
-        let bottomConstraint = self.photoImageView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+        let topConstraint = self.photoView.topAnchor.constraint(equalTo: self.contentView.topAnchor)
+        let leadingConstraint = self.photoView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor)
+        let trailingConstraint = self.photoView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor)
+        let bottomConstraint = self.photoView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor)
 
-        NSLayoutConstraint.activate([
-            topConstraint, leadingConstraint, bottomConstraint, trailingConstraint
-            ])
+        NSLayoutConstraint.activate([topConstraint, leadingConstraint, trailingConstraint, bottomConstraint])
     }
 
     required init?(coder: NSCoder) {
@@ -40,12 +35,7 @@ class PhotosCollectionViewCell: UICollectionViewCell {
 
     override func prepareForReuse() {
         super.prepareForReuse()
-        self.photoImageView.image = nil
+        self.photoView.image = nil
     }
-
-    func setup(with photo: String) {
-        self.photoImageView.image = UIImage()
-    }
-
 }
 

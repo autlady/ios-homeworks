@@ -8,18 +8,15 @@
 import UIKit
 
 class PhotoCell: UICollectionViewCell {
-
      var photoImageView: UIImageView = {
-        let imageView = UIImageView()
+         let imageView = UIImageView()
          imageView.layer.cornerRadius = 6
-        imageView.contentMode = .scaleAspectFill
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.backgroundColor = .white
+         imageView.contentMode = .scaleAspectFill
+         imageView.translatesAutoresizingMaskIntoConstraints = false
+         imageView.backgroundColor = .white
          imageView.clipsToBounds = true
-
          return imageView
     }()
-
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -47,6 +44,5 @@ class PhotoCell: UICollectionViewCell {
     func setup(with photo: String) {
         self.photoImageView.image = UIImage()
     }
-
 }
 

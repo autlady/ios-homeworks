@@ -7,7 +7,16 @@
 
 import UIKit
 
+protocol PostTableViewCellProtocol: AnyObject {
+    func tapPosts(cell: PostTableViewCell)
+    func tapLikes(cell: PostTableViewCell)
+}
+
 final class PostTableViewCell: UITableViewCell {
+
+    weak var delegate: PostTableViewCellProtocol?
+    private var tapLikesGestureRecognizer = UITapGestureRecognizer()
+    private var tapPostsGestureRecognizer = UITapGestureRecognizer()
 
     struct ViewModel: ViewModelProtocol {
         var author, description, image: String
@@ -40,7 +49,6 @@ final class PostTableViewCell: UITableViewCell {
         imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.backgroundColor = .black
-
         return imageView
     }()
 
@@ -62,7 +70,6 @@ final class PostTableViewCell: UITableViewCell {
         stackView.distribution = .fill
         stackView.setContentCompressionResistancePriority(UILayoutPriority(250), for: .vertical)
         stackView.translatesAutoresizingMaskIntoConstraints = false
-
         return stackView
     }()
 
@@ -76,7 +83,6 @@ final class PostTableViewCell: UITableViewCell {
         label.setContentHuggingPriority(UILayoutPriority(1), for: .horizontal)
         label.setContentCompressionResistancePriority(UILayoutPriority(250), for: .vertical)
         label.translatesAutoresizingMaskIntoConstraints = false
-
         return label
     }()
 
@@ -89,15 +95,13 @@ final class PostTableViewCell: UITableViewCell {
         label.textColor = .black
         label.setContentCompressionResistancePriority(UILayoutPriority(250), for: .vertical)
         label.translatesAutoresizingMaskIntoConstraints = false
-
         return label
     }()
-
-
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.setupView()
+        self.setupGesture()
     }
 
     required init?(coder: NSCoder) {
@@ -192,18 +196,36 @@ final class PostTableViewCell: UITableViewCell {
 }
 
 extension PostTableViewCell: Setupable {
-
     func setup(with viewModel: ViewModelProtocol) {
-        
         guard let viewModel = viewModel as? ViewModel else { return }
-
         self.authorLabel.text = viewModel.author
         self.postImageView.image = UIImage(named: viewModel.image)
         self.descriptionLabel.text = viewModel.description
-        self.likesLabel.text? += String(viewModel.likes)
-        self.viewsLabel.text? += String(viewModel.views)
-
+        self.likesLabel.text = "Likes: " + String(viewModel.likes)
+        self.viewsLabel.text = "Views: " + String(viewModel.views)
     }
 }
+
+extension PostTableViewCell {
+    private func setupGesture() {
+        self.tapLikesGestureRecognizer.addTarget(self, action: #selector(self.likesHandleTapGesture(_:)))
+        self.likesLabel.addGestureRecognizer(self.tapLikesGestureRecognizer)
+        self.likesLabel.isUserInteractionEnabled = true
+        self.tapPostsGestureRecognizer.addTarget(self, action: #selector(self.postsHandleTapGesture(_:)))
+        self.postImageView.addGestureRecognizer(self.tapPostsGestureRecognizer)
+        self.postImageView.isUserInteractionEnabled = true
+    }
+
+    @objc func likesHandleTapGesture(_ gestureRecognizer: UITapGestureRecognizer) {
+        guard self.tapLikesGestureRecognizer === gestureRecognizer else { return }
+        delegate?.tapLikes(cell: self)
+    }
+
+    @objc func postsHandleTapGesture(_ gestureRecognizer: UITapGestureRecognizer) {
+        guard self.tapPostsGestureRecognizer === gestureRecognizer else { return }
+        delegate?.tapPosts(cell: self)
+    }
+}
+
 
 
